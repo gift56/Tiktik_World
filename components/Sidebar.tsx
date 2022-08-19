@@ -42,6 +42,15 @@ const Sidebar = () => {
               <div className="pr-4">
                 <GoogleLogin
                   clientId=""
+                  render={(renderProps) => (
+                    <button
+                      onClick={renderProps.onClick}
+                      disabled={renderProps.disabled}
+                      className="bg-white text-lg text-[#f51997] border-[1px] border-[#f51997] font-semibold px-6 py-3 rounded-md outline-none w-full mt-3 hover:text-white hover:bg-[#f51997] cursor-pointer"
+                    >
+                      Login
+                    </button>
+                  )}
                   onSuccess={() => {}}
                   onFailure={() => {}}
                   cookiePolicy="single_host_origin"
