@@ -16,6 +16,11 @@ const Sidebar = () => {
       >
         {showSidebar ? <ImCancelCircle /> : <AiOutlineMenu />}
       </div>
+      {showSidebar && (
+        <div className="xl:w-400 xl:border-0 w-20 flex flex-col justify-start mb-10 border-r-2 border-gray-100 p-3">
+          <div></div>
+        </div>
+      )}
     </div>
   );
 };
