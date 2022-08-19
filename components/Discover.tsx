@@ -13,7 +13,7 @@ const Discover = () => {
         {topics.map((item) => (
           <Link href={`/?topic=${item.name}`} key={item.name}>
             <div>
-              <span>{item.icon}</span>
+              <span className="text-2xl font-bold xl:text-md">{item.icon}</span>
               <span>{item.name}</span>
             </div>
           </Link>
