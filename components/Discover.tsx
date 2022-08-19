@@ -14,6 +14,7 @@ const Discover = () => {
           <Link href={`/?topic=${item.name}`} key={item.name}>
             <div>
               <span>{item.icon}</span>
+              <span>{item.name}</span>
             </div>
           </Link>
         ))}
