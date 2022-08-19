@@ -14,7 +14,9 @@ const Discover = () => {
           <Link href={`/?topic=${item.name}`} key={item.name}>
             <div>
               <span className="text-2xl font-bold xl:text-md">{item.icon}</span>
-              <span>{item.name}</span>
+              <span className="font-medium text-md hidden xl:block capitalize">
+                {item.name}
+              </span>
             </div>
           </Link>
         ))}
