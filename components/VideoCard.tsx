@@ -61,17 +61,19 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
               className="lg:w-[600px] h-[300px] md:h-[400px] lg:h-[500px] w-[200px] rounded-2xl cursor-pointer bg-gray-100 object-cover"
             ></video>
           </Link>
-          {isHover && <div>
-            {playing?(
+          {isHover && (
+            <div>
+              {playing ? (
                 <button>
-                    <BsFillPauseFill/>
+                  <BsFillPauseFill className="text-black text-2xl lg:text-4xl" />
                 </button>
-            ):(
+              ) : (
                 <button>
-                    <BsFillPlayFill/>
+                  <BsFillPlayFill className="text-black text-2xl lg:text-4xl" />
                 </button>
-            )}
-            </div>}
+              )}
+            </div>
+          )}
         </div>
       </div>
     </div>
