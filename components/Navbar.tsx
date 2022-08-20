@@ -29,10 +29,26 @@ const Navbar = () => {
         {userProfile ? (
           <div className="flex gap-5 md:gap-10">
             <Link href="/upload">
-              <button>
-                <IoMdAdd />
+              <button className="border-2 px-2 md:px-4 text-md font-semibold flex items-center gap-2 rounded">
+                <IoMdAdd className="text-xl" />
+                {` `}
+                <span className="hidden md:block">Upload</span>
               </button>
             </Link>
+            {userProfile.image && (
+              <Link href="/">
+                <>
+                  <Image
+                    width={62}
+                    height={62}
+                    className="rounded-full"
+                    src={userProfile.image}
+                    alt="profile photo"
+                    layout="responsive"
+                  />
+                </>
+              </Link>
+            )}
           </div>
         ) : (
           <GoogleLogin
