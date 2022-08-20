@@ -19,7 +19,24 @@ const Upload = () => {
             <p className="text-md text-gray-400">Post videos to your account</p>
           </div>
           <div className="border-dashed rounded-xl border-4 border-gray-200 flex flex-col justify-center items-center outline-none mt-10 w-[260px] h-[460px] p-10 cursor-pointer hover:border-red-300 hover:bg-gray-100 transition-all">
-            {isLoading ? <p>Uploading......</p> : <div></div>}
+            {isLoading ? (
+              <p>Uploading......</p>
+            ) : (
+              <div>
+                {videoAsset ? (
+                  <div></div>
+                ) : (
+                  <label className="cursor-pointer">
+                    <div className="flex flex-col items-center justify-center">
+                      <p className="font-bold text-xl">
+                        <FaCloudDownloadAlt className="text-gray-300 text-6xl" />
+                      </p>
+                      <p className="font-semibold text-xl">Upload Video</p>
+                    </div>
+                  </label>
+                )}
+              </div>
+            )}
           </div>
         </div>
       </div>
