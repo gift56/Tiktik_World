@@ -8,8 +8,12 @@ import { client } from "../utils/client";
 
 const Upload = () => {
   const [isLoading, setIsloading] = useState(false);
-
   const [videoAsset, setVideoAsset] = useState();
+
+  const uploadVideo = async (e: any) => {
+    const selectedFile = e.target.file[0];
+    const fileTypes = ["video/mp4","video/webm","video/ogg"];
+  };
   return (
     <div className="flex w-full h-full">
       <div className="bg-white rounded-lg">
