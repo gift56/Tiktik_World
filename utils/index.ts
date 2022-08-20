@@ -2,7 +2,18 @@ import axios from "axios";
 import jwtDecode from "jwt-decode";
 
 export const createOrGetGoogleUser = async (response: any) => {
-  const decoded = jwtDecode(response.credential);
+  const decoded: { name: string; picture: string; sub: string } = jwtDecode(
+    response.credential
+  );
+
+  const { name, picture, sub } = decoded;
+
+  const user = {
+    _id: sub,
+    _type: "user",
+    userName: name,
+    image: picture,
+  };
 
   console.log(decoded);
 };
