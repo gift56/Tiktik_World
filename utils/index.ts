@@ -1,5 +1,5 @@
-import axios from 'axios';
+import axios from "axios";
 
-export const createOrGetUser = async (response: any, addUser: any) => {
-
+export const createOrGetGoogleUser = async (response: any) => {
+  console.log(response.credential);
 };
