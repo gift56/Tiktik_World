@@ -7,7 +7,18 @@ import useAuthStore from "../store/authStore";
 import { client } from "../utils/client";
 
 const Upload = () => {
-  return <div>upload</div>;
+  return (
+    <div className="flex w-full h-full">
+      <div className="bg-white rounded-lg">
+        <div>
+          <div>
+            <p>Upload a Video</p>
+            <p>Post videos to your account</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Upload;
