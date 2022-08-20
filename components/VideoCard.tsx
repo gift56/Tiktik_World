@@ -61,7 +61,9 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
               className="lg:w-[600px] h-[300px] md:h-[400px] lg:h-[500px] w-[200px] rounded-2xl cursor-pointer bg-gray-100"
             ></video>
           </Link>
-          {isHover && <div></div>}
+          {isHover && <div>
+            
+            </div>}
         </div>
       </div>
     </div>
