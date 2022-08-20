@@ -15,7 +15,7 @@ const Upload = () => {
   >();
 
   const uploadVideo = async (e: any) => {
-    const selectedFile = e.target.file[0];
+    const selectedFile = e.target.files[0];
     const fileTypes = ["video/mp4", "video/webm", "video/ogg"];
 
     if (fileTypes.includes(selectedFile.type)) {
@@ -47,7 +47,9 @@ const Upload = () => {
             ) : (
               <div>
                 {videoAsset ? (
-                  <div></div>
+                  <div>
+                    <video src={videoAsset.url} loop controls className="rounded-xl h-[450px] mt-16 bg-black"></video>
+                  </div>
                 ) : (
                   <label className="cursor-pointer">
                     <div className="flex flex-col items-center justify-center">
