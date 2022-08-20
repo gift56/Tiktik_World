@@ -34,10 +34,13 @@ const Upload = () => {
                       <p className="font-semibold text-xl">Upload Video</p>
                     </div>
                     <p className="text-gray-400 text-center mt-10 text-sm leading-10">
-                        MP4 or WebM or ogg <br />
-                        720x1280 or higher <br />
-                        Up to 10 minutes <br />
-                        Less than 2GB
+                      MP4 or WebM or ogg <br />
+                      720x1280 or higher <br />
+                      Up to 10 minutes <br />
+                      Less than 2GB
+                    </p>
+                    <p className="bg-[#f51997] text-center mt-10 rounded text-white text-md font-medium p-2 w-25 outline-none">
+                      Select File
                     </p>
                   </label>
                 )}
