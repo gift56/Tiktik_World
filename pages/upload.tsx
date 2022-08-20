@@ -33,6 +33,12 @@ const Upload = () => {
                       </p>
                       <p className="font-semibold text-xl">Upload Video</p>
                     </div>
+                    <p>
+                        MP4 or WebM or ogg <br />
+                        720x1280 or higher <br />
+                        Up to 10 minutes <br />
+                        Less than 2GB
+                    </p>
                   </label>
                 )}
               </div>
