@@ -5,14 +5,33 @@ import { MdDelete } from "react-icons/md";
 import axios from "axios";
 import useAuthStore from "../store/authStore";
 import { client } from "../utils/client";
+import { SanityAssetDocument } from "@sanity/client";
 
 const Upload = () => {
   const [isLoading, setIsloading] = useState(false);
-  const [videoAsset, setVideoAsset] = useState();
+  const [wrongFileType, setWrongFileType] = useState(false);
+  const [videoAsset, setVideoAsset] = useState<
+    SanityAssetDocument | undefined
+  >();
 
   const uploadVideo = async (e: any) => {
     const selectedFile = e.target.file[0];
-    const fileTypes = ["video/mp4","video/webm","video/ogg"];
+    const fileTypes = ["video/mp4", "video/webm", "video/ogg"];
+
+    if (fileTypes.includes(selectedFile.type)) {
+      client.assets
+        .upload("file", selectedFile, {
+          contentType: selectedFile.type,
+          filename: selectedFile.name,
+        })
+        .then((data) => {
+          setVideoAsset(data);
+          setWrongFileType(false);
+        });
+    } else {
+      setIsloading(false);
+      setWrongFileType(true);
+    }
   };
   return (
     <div className="flex w-full h-full">
