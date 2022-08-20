@@ -1,12 +1,12 @@
-import type { NextPage } from "next";
 import axios from "axios";
+import { Video } from "../types";
 
-// interface IProps{
-//   videos:
-// }
+interface IProps {
+  videos: Video[];
+}
 
-const Home: NextPage = ({videos}) => {
-  console.log(videos)
+const Home = ({ videos }: IProps) => {
+  console.log(videos);
 
   return <div className="">Hello Wolrd</div>;
 };
@@ -16,7 +16,7 @@ export const getServerSideProps = async () => {
 
   return {
     props: {
-      videos: data
+      videos: data,
     },
   };
 };
