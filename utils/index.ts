@@ -1,7 +1,7 @@
 import axios from "axios";
 import jwtDecode from "jwt-decode";
 
-export const createOrGetGoogleUser = async (response: any) => {
+export const createOrGetGoogleUser = async (response: any, addUser: any) => {
   const decoded: { name: string; picture: string; sub: string } = jwtDecode(
     response.credential
   );
@@ -15,7 +15,7 @@ export const createOrGetGoogleUser = async (response: any) => {
     image: picture,
   };
 
-  // addUser(user)
+  addUser(user)
 
   await axios.post(`http://localhost:3000/api/auth`, user);
 };
