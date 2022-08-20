@@ -33,11 +33,23 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
           <div>
             <Link href="/">
               <div className="flex items-center gap-2">
-                <p className="flex items-center gap-2  md:text-md">{post.postedBy.userName} {` `} <GoVerified className="text-blue-400 text-md"/></p>
-                <p>{post.postedBy.userName}</p>
+                <p className="flex items-center gap-2  md:text-md font-bold text-primary">
+                  {post.postedBy.userName} {` `}{" "}
+                  <GoVerified className="text-blue-400 text-md" />
+                </p>
+                <p className="capitalize font-medium text-xs text-gray-500 hidden md:block">
+                  {post.postedBy.userName}
+                </p>
               </div>
             </Link>
           </div>
+        </div>
+      </div>
+      <div className="lg:ml-20 flex gap-4 relative">
+        <div className="rounded-3xl">
+            <Link href="/">
+                <video></video>
+            </Link>
         </div>
       </div>
     </div>
