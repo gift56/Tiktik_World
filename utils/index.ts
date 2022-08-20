@@ -15,5 +15,7 @@ export const createOrGetGoogleUser = async (response: any) => {
     image: picture,
   };
 
+  // addUser(user)
+
   await axios.post(`http://localhost:3000/api/auth`, user);
 };
