@@ -1,5 +1,8 @@
 import axios from "axios";
+import jwtDecode from "jwt-decode";
 
 export const createOrGetGoogleUser = async (response: any) => {
-  console.log(response.credential);
+  const decoded = jwtDecode(response.credential);
+
+  console.log(decoded);
 };
