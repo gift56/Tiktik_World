@@ -1,9 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
 
-const upload = () => {
-  return (
-    <div>upload</div>
-  )
-}
+const Upload = () => {
+  return <div>upload</div>;
+};
 
-export default upload
+export default Upload;
