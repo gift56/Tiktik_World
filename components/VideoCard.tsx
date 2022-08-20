@@ -13,6 +13,8 @@ interface IProps {
 
 const VideoCard: NextPage<IProps> = ({ post }) => {
   const [isHover, setIsHover] = useState(false);
+  const [playing, setPlaying] = useState(false);
+  const [videoMuted, setVideoMuted] = useState(false);
   return (
     <div className="flex flex-col pb-6 border-b-2 border-gray-200">
       <div>
