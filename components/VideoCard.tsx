@@ -16,7 +16,17 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
   const [playing, setPlaying] = useState(false);
   const [videoMuted, setVideoMuted] = useState(false);
 
-  const videoRef = useRef(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const onVideoPress = () => {
+    if (playing) {
+      videoRef?.current?.pause();
+      setPlaying(false);
+    } else {
+      videoRef?.current?.play();
+      setPlaying(true);
+    }
+  };
 
   return (
     <div className="flex flex-col pb-6 border-b-2 border-gray-200">
@@ -61,17 +71,18 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
             <video
               src={post.video.asset.url}
               loop
+              ref={videoRef}
               className="lg:w-[600px] h-[300px] md:h-[400px] lg:h-[500px] w-[200px] rounded-2xl cursor-pointer bg-gray-100 object-cover"
             ></video>
           </Link>
           {isHover && (
             <div>
               {playing ? (
-                <button>
+                <button onClick={onVideoPress}>
                   <BsFillPauseFill className="text-black text-2xl lg:text-4xl" />
                 </button>
               ) : (
-                <button>
+                <button onClick={onVideoPress}>
                   <BsFillPlayFill className="text-black text-2xl lg:text-4xl" />
                 </button>
               )}
