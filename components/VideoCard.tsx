@@ -15,6 +15,9 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
   const [isHover, setIsHover] = useState(false);
   const [playing, setPlaying] = useState(false);
   const [videoMuted, setVideoMuted] = useState(false);
+
+  const videoRef = useRef(null);
+
   return (
     <div className="flex flex-col pb-6 border-b-2 border-gray-200">
       <div>
@@ -70,6 +73,15 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
               ) : (
                 <button>
                   <BsFillPlayFill className="text-black text-2xl lg:text-4xl" />
+                </button>
+              )}
+              {videoMuted ? (
+                <button>
+                  <HiVolumeOff className="text-black text-2xl lg:text-4xl" />
+                </button>
+              ) : (
+                <button>
+                  <HiVolumeUp className="text-black text-2xl lg:text-4xl" />
                 </button>
               )}
             </div>
