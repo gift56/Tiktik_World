@@ -25,6 +25,8 @@ const Upload = () => {
     const fileTypes = ["video/mp4", "video/webm", "video/ogg"];
 
     if (fileTypes.includes(selectedFile.type)) {
+      // setWrongFileType(false);
+      // setIsloading(true);
       client.assets
         .upload("file", selectedFile, {
           contentType: selectedFile.type,
@@ -61,7 +63,7 @@ const Upload = () => {
         topic: cartegory,
       };
       await axios.post("http://localhost:3000/api/post", document);
-      router.push("/")
+      router.push("/");
     }
   };
 
@@ -81,7 +83,7 @@ const Upload = () => {
                 {videoAsset ? (
                   <div>
                     <video
-                      src={videoAsset.url}
+                      src={videoAsset?.url}
                       loop
                       controls
                       className="rounded-xl h-[450px] mt-16 bg-black"
