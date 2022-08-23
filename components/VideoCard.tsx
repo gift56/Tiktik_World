@@ -78,11 +78,11 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
               src={post.video.asset.url}
               loop
               ref={videoRef}
-              className="lg:w-[600px] h-[300px] md:h-[400px] lg:h-[500px] w-[200px] rounded-2xl cursor-pointer bg-gray-100"
+              className="lg:w-[600px] h-[300px] md:h-[400px] lg:h-[528px] w-[200px] rounded-2xl cursor-pointer bg-gray-100"
             ></video>
           </Link>
           {isHover && (
-            <div className="absolute bottom-6 cursor-pointer left-8 md:left-14 lg:left-0 flex gap-10 lg:justify-between w-[100px] md:w-[50px] p-3">
+            <div className="absolute bottom-6 cursor-pointer left-8 md:left-14 lg:left-0 flex gap-10 lg:justify-between w-[100px] md:w-[50px] p-3 lg:w-[600px]">
               {playing ? (
                 <button onClick={onVideoPress}>
                   <BsFillPauseFill className="text-black text-2xl lg:text-4xl" />

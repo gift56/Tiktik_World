@@ -77,6 +77,9 @@ const Detail = ({ postDetails }: IProps) => {
           )}
         </div>
       </div>
+      <div>
+        
+      </div>
     </div>
   );
 };
