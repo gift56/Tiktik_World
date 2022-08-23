@@ -18,11 +18,17 @@ const Detail = ({ postDetails }: IProps) => {
   const [post, setPost] = useState(postDetails);
   const [playing, setPlaying] = useState(false);
 
-  const onVideoClick=()=>{
+  const onVideoClick = () => {
+    if (playing) {
+      videoRef?.current?.pause();
+      setPlaying(false);
+    } else {
+      videoRef?.current?.play();
+      setPlaying(true);
+    }
+  };
 
-  }
-
-  const videoRef = useRef(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   if (!post) return null;
 
