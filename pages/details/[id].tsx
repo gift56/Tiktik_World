@@ -19,6 +19,8 @@ const Detail = ({ postDetails }: IProps) => {
 
   const videoRef = useRef(null);
 
+  if (!post) return null;
+
   return <div>Detail</div>;
 };
 
