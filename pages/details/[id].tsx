@@ -16,6 +16,7 @@ interface IProps {
 
 const Detail = ({ postDetails }: IProps) => {
   const [post, setPost] = useState(postDetails);
+  const [playing, setPlaying] = useState(false);
 
   const videoRef = useRef(null);
 
@@ -34,10 +35,17 @@ const Detail = ({ postDetails }: IProps) => {
             <video
               ref={videoRef}
               src={post.video.asset.url}
-              className="h-full cursor-pointer"
+              className="h-full w-full cursor-pointer"
               loop
               onClick={() => {}}
             ></video>
+          </div>
+          <div className="absolute top-[44%] left-[40%]">
+            {!playing && (
+              <button onClick={() => {}}>
+                <BsFillPlayFill className="text-white text-6xl lg:text-8xl" />
+              </button>
+            )}
           </div>
         </div>
       </div>
