@@ -26,8 +26,11 @@ const Detail = ({ postDetails }: IProps) => {
       <div className="relative flex-2 w-[1000px] lg:w-9/12 flex justify-center items-center bg-black-600">
         <div className="absolute top-6 left-2 lg:left-6 flex gap-6 z-50">
           <p>
-            <MdOutlineCancel />
+            <MdOutlineCancel className="text-white text-[35px]"/>
           </p>
+        </div>
+        <div>
+          
         </div>
       </div>
     </div>
