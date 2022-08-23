@@ -18,6 +18,8 @@ const Detail = ({ postDetails }: IProps) => {
   const [post, setPost] = useState(postDetails);
   const [playing, setPlaying] = useState(false);
   const [videoMuted, setVideoMuted] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const router = useRouter();
 
   const onVideoClick = () => {
     if (playing) {
@@ -35,15 +37,13 @@ const Detail = ({ postDetails }: IProps) => {
     }
   }, [post, videoMuted]);
 
-  const videoRef = useRef<HTMLVideoElement>(null);
-
   if (!post) return null;
 
   return (
     <div className="flex w-full absolute left-0 top-0 bg-white flex-wrap lg:flex-nowrap">
       <div className="relative flex-2 w-[1000px] lg:w-9/12 flex justify-center items-center bg-blurred-img bg-no-repeat bg-cover bg-center">
         <div className="absolute top-6 left-2 lg:left-6 flex gap-6 z-50">
-          <p>
+          <p className="cursor-pointer" onClick={() => router.back()}>
             <MdOutlineCancel className="text-white text-[35px]" />
           </p>
         </div>
@@ -52,7 +52,7 @@ const Detail = ({ postDetails }: IProps) => {
             <video
               ref={videoRef}
               src={post.video.asset.url}
-              className="h-full w-full cursor-pointer"
+              className="h-full cursor-pointer"
               loop
               onClick={onVideoClick}
             ></video>
