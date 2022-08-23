@@ -21,7 +21,11 @@ const Detail = ({ postDetails }: IProps) => {
 
   if (!post) return null;
 
-  return <div>Detail</div>;
+  return (
+    <div className="flex w-full absolute left-0 top-0 bg-white flex-wrap lg:flex-nowrap">
+      <div></div>
+    </div>
+  );
 };
 
 export const getServerSideProps = async ({
