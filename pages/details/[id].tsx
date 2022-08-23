@@ -13,7 +13,7 @@ const Detail = () => {
 };
 
 const getServerSideProps = async ({ params: { id } }) => {
-  const { data } = axios.get("http://localhost:3000/api/post/${id}")
+  const { data } = axios.get("/api/post/${id}")
 };
 
 export default Detail;
