@@ -17,6 +17,7 @@ interface IProps {
 const Detail = ({ postDetails }: IProps) => {
   const [post, setPost] = useState(postDetails);
   const [playing, setPlaying] = useState(false);
+  const [videoMuted, setVideoMuted] = useState(false);
 
   const onVideoClick = () => {
     if (playing) {
@@ -57,6 +58,17 @@ const Detail = ({ postDetails }: IProps) => {
               </button>
             )}
           </div>
+        </div>
+        <div className="absolute bottom-5 lg:bottom-10 right-5 lg:right-10 cursor-pointer">
+          {videoMuted ? (
+            <button onClick={() => setVideoMuted(false)}>
+              <HiVolumeOff className="text-black text-2xl lg:text-4xl" />
+            </button>
+          ) : (
+            <button onClick={() => setVideoMuted(true)}>
+              <HiVolumeUp className="text-black text-2xl lg:text-4xl" />
+            </button>
+          )}
         </div>
       </div>
     </div>
