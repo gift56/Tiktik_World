@@ -29,9 +29,15 @@ const Detail = ({ postDetails }: IProps) => {
             <MdOutlineCancel className="text-white text-[35px]" />
           </p>
         </div>
-        <div className="relative">
+        <div className="relative bg-black">
           <div className="h-[60vh] lg:h-[100vh]">
-            <video src={post.video.asset.url}></video>
+            <video
+              ref={videoRef}
+              src={post.video.asset.url}
+              className="h-full cursor-pointer"
+              loop
+              onClick={() => {}}
+            ></video>
           </div>
         </div>
       </div>
