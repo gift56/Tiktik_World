@@ -10,7 +10,15 @@ const LikeButton = () => {
   return (
     <div className="gap-6">
       <div className="flex flex-col justify-center items-center mt-4 cursor-pointer">
-        
+        {liked ? (
+          <div className="bg-primary rounded-full p-2 md:p-4 text-[#f51997]">
+            <MdFavorite className="text-lg md:text-3xl" />
+          </div>
+        ) : (
+          <div>
+            <MdFavorite className="" />
+          </div>
+        )}
       </div>
     </div>
   );
