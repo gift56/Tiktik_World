@@ -18,6 +18,10 @@ const Detail = ({ postDetails }: IProps) => {
   const [post, setPost] = useState(postDetails);
   const [playing, setPlaying] = useState(false);
 
+  const onVideoClick=()=>{
+
+  }
+
   const videoRef = useRef(null);
 
   if (!post) return null;
@@ -37,12 +41,12 @@ const Detail = ({ postDetails }: IProps) => {
               src={post.video.asset.url}
               className="h-full w-full cursor-pointer"
               loop
-              onClick={() => {}}
+              onClick={onVideoClick}
             ></video>
           </div>
-          <div className="absolute top-[44%] left-[40%]">
+          <div className="absolute top-[44%] left-[40%] cursor-pointer">
             {!playing && (
-              <button onClick={() => {}}>
+              <button onClick={onVideoClick}>
                 <BsFillPlayFill className="text-white text-6xl lg:text-8xl" />
               </button>
             )}
