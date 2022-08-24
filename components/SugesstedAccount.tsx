@@ -5,6 +5,12 @@ import { GoVerified } from "react-icons/go";
 import useAuthStore from "../store/authStore";
 
 const SugesstedAccount = () => {
+  const { fetchAllUsers, allUsers } = useAuthStore();
+  
+  useEffect(() => {
+    fetchAllUsers();
+  }, []);
+
   return <div>SugesstedAccount</div>;
 };
 
