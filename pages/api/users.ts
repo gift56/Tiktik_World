@@ -7,6 +7,6 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === "GET") {
-    
+    const data = await client.fetch(allUsersQuery());
   }
 }
