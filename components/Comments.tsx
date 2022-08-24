@@ -63,6 +63,9 @@ const Comments = ({
                           </div>
                         </div>
                       </Link>
+                      <div>
+                        <p>{item.comment}</p>
+                      </div>
                     </div>
                   )
               )}
