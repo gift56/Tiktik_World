@@ -25,7 +25,7 @@ const Navbar = () => {
         </div>
       </Link>
       <div className="relative hidden md:block">
-        <form>
+        <form onSubmit={handleSearch} className="absolute" >
 
         </form>
       </div>
