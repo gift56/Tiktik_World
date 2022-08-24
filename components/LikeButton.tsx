@@ -9,9 +9,18 @@ interface IProps {
   likes: any[];
 }
 
-const LikeButton = ({ handleLike, handleDislike,likes }: IProps) => {
+const LikeButton = ({ handleLike, handleDislike, likes }: IProps) => {
   const [liked, setLiked] = useState(false);
-  const { userProfile } = useAuthStore();
+  const { userProfile }: any = useAuthStore();
+  const filterLikes = likes?.filter((item) => item._ref === userProfile?._id);
+
+  useEffect(() => {
+    if (filterLikes?.length > 0) {
+      setLiked(true);
+    } else {
+      setLiked(false);
+    }
+  }, [filterLikes, likes]);
 
   return (
     <div className="gap-6">
