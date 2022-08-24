@@ -33,7 +33,10 @@ const SugesstedAccount = () => {
               </div>
               <div className="hidden xl:block">
                 <p className="flex gap-1 items-center text-md font-bold text-primary lowercase">
-                  {user.userName} <GoVerified />
+                  {user.userName.replace(' ','')} <GoVerified className="text-blue-400" />
+                </p>
+                <p className="flex gap-1 items-center text-xs font-bold text-gray-400 capitalize">
+                  {user.userName}
                 </p>
               </div>
             </div>
