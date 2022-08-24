@@ -16,7 +16,9 @@ interface IProps {
 }
 
 const Profile = ({ data }: IProps) => {
-  return <div>Profile</div>;
+  return <div>
+
+  </div>;
 };
 
 export const getServerSideProps = async ({
@@ -24,7 +26,7 @@ export const getServerSideProps = async ({
 }: {
   params: { id: string };
 }) => {
-  const res = await axios.get(`${BASE_URL}/profile/${id}`);
+  const res = await axios.get(`${BASE_URL}/api/profile/${id}`);
 
   return {
     props: { data: res.data },
