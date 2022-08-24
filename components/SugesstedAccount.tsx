@@ -1,9 +1,8 @@
-import React from 'react'
+import React, { useEffect } from "react";
+import Image from "next/image";
 
 const SugesstedAccount = () => {
-  return (
-    <div>SugesstedAccount</div>
-  )
-}
+  return <div>SugesstedAccount</div>;
+};
 
-export default SugesstedAccount
+export default SugesstedAccount;
