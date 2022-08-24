@@ -24,5 +24,7 @@ export default async function handler(
           .patch(postId)
           .unset([`likes[_ref=="${userId}"]`])
           .commit();
+
+    res.status(200).json(data);
   }
 }

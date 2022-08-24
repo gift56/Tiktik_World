@@ -6,9 +6,10 @@ import useAuthStore from "../store/authStore";
 interface IProps {
   handleLike: () => void;
   handleDislike: () => void;
+  likes: any[];
 }
 
-const LikeButton = ({ handleLike, handleDislike }: IProps) => {
+const LikeButton = ({ handleLike, handleDislike,likes }: IProps) => {
   const [liked, setLiked] = useState(false);
   const { userProfile } = useAuthStore();
 
@@ -34,7 +35,7 @@ const LikeButton = ({ handleLike, handleDislike }: IProps) => {
           className="text-md font-semibold
         "
         >
-          likes?.length? || 0
+          {likes?.length | 0}
         </p>
       </div>
     </div>
