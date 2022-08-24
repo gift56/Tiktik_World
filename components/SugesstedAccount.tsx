@@ -22,7 +22,14 @@ const SugesstedAccount = () => {
           <Link href={`/profile/${user._id}`} key={user._id}>
             <div className="flex gap-3 cursor-pointer hover:bg-primary p-2 font-semibold rounded">
               <div className="w-8 h-8">
-                
+                <Image
+                  src={user.image}
+                  width={34}
+                  height={34}
+                  className="rounded-full"
+                  alt="user profile"
+                  layout="responsive"
+                />
               </div>
             </div>
           </Link>
