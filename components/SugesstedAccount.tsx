@@ -20,7 +20,11 @@ const SugesstedAccount = () => {
       <div>
         {allUsers.slice(0, 6).map((user: IUser) => (
           <Link href={`/profile/${user._id}`} key={user._id}>
-            <div className="flex gap-3 cursor-pointer hover:bg-primary p-2 font-semibold rounded"></div>
+            <div className="flex gap-3 cursor-pointer hover:bg-primary p-2 font-semibold rounded">
+              <div className="w-8 h-8">
+                
+              </div>
+            </div>
           </Link>
         ))}
       </div>
