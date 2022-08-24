@@ -5,9 +5,28 @@ import { GoVerified } from "react-icons/go";
 import useAuthStore from "../store/authStore";
 import NoResult from "./NoResult";
 
-const Comments = () => {
-  const comments = [];
-  const isPostingComment = false;
+interface IProps {
+  postingComment: boolean;
+  comment: string;
+  setComment: () => void;
+  addComment: () => void;
+  comments: IComment[];
+}
+
+interface IComment {
+  comment: string;
+  length?: number;
+  _key: string;
+  postedBy: { _ref: string; _id: string };
+}
+
+const Comments = ({
+  postingComment,
+  comment,
+  setComment,
+  addComment,
+  comments,
+}: IProps) => {
   const { userProfile } = useAuthStore();
 
   return (
@@ -30,7 +49,7 @@ const Comments = () => {
               className="bg-primary px-6 py-4 text-md font-medium border-2 w-[250px] md:w-[500px] lg:w-[350px] border-gray-100 focus:outline-none focus:border-2 focus:border-gray-300 flex-1 rounded-lg"
             />
             <button className="text-md text-gray-400" onClick={() => {}}>
-              {isPostingComment ? "Commenting..." : "Comment"}
+              {postingComment ? "Commenting..." : "Comment"}
             </button>
           </form>
         </div>
