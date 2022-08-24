@@ -16,9 +16,34 @@ interface IProps {
 }
 
 const Profile = ({ data }: IProps) => {
-  return <div>
-
-  </div>;
+  const { user, userVideos, userLikedVideos } = data;
+  return (
+    <div>
+      <div className="w-full">
+        <div className="flex gap-6 md:gap-10 mb-4 bg-white w-full">
+          <div className="w-16 h-16">
+            <Image
+              src={user.image}
+              width={34}
+              height={34}
+              className="rounded-full"
+              alt="user profile"
+              layout="responsive"
+            />
+          </div>
+          <div className="hidden xl:block">
+            <p className="flex gap-1 items-center text-md font-bold text-primary lowercase">
+              {user.userName.replace(" ", "")}{" "}
+              <GoVerified className="text-blue-400" />
+            </p>
+            <p className="flex gap-1 items-center text-xs font-bold text-gray-400 capitalize">
+              {user.userName}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export const getServerSideProps = async ({
