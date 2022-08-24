@@ -24,7 +24,11 @@ const Navbar = () => {
           />
         </div>
       </Link>
-      <div>Search</div>
+      <div className="relative hidden md:block">
+        <form>
+
+        </form>
+      </div>
       <div>
         {userProfile ? (
           <div className="flex gap-5 md:gap-10">
