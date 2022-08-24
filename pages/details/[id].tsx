@@ -24,6 +24,8 @@ const Detail = ({ postDetails }: IProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const router = useRouter();
   const { userProfile }: any = useAuthStore();
+  const [comment, setComment] = useState("");
+  const [postingComment, setPostingComment] = useState(false);
 
   const onVideoClick = () => {
     if (playing) {
@@ -49,6 +51,16 @@ const Detail = ({ postDetails }: IProps) => {
         like,
       });
       setPost({ ...post, likes: data.likes });
+    }
+  };
+
+  const addComment = async (e) => {
+    e.preventDefault();
+    if (userProfile && comment) {
+      setPostingComment(true);
+      const res = await axios.put(`${BASE_URL}/api/post/${post._id}`,{
+        
+      });
     }
   };
 
