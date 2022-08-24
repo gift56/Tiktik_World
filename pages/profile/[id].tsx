@@ -7,7 +7,15 @@ import NoResult from "../../components/NoResult";
 import { Video, IUser } from "../../types";
 import { BASE_URL } from "../../utils";
 
-const Profile = () => {
+interface IProps {
+  data: {
+    user: IUser;
+    userVideos: Video[];
+    userLikedVideos: Video[];
+  };
+}
+
+const Profile = ({ data }: IProps) => {
   return <div>Profile</div>;
 };
 
@@ -17,6 +25,10 @@ export const getServerSideProps = async ({
   params: { id: string };
 }) => {
   const res = await axios.get(`${BASE_URL}/profile/${id}`);
+
+  return {
+    props: { data: res.data },
+  };
 };
 
 export default Profile;
