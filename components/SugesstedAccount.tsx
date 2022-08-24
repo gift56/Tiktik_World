@@ -6,12 +6,16 @@ import useAuthStore from "../store/authStore";
 
 const SugesstedAccount = () => {
   const { fetchAllUsers, allUsers } = useAuthStore();
-  
+
   useEffect(() => {
     fetchAllUsers();
-  }, []);
+  }, [fetchAllUsers]);
 
-  return <div>SugesstedAccount</div>;
+  return (
+    <div className="xl:border-b-2 border-gray-200 pb-4">
+      <p className="text-gray-500 font-semibold hidden m-3 mt-4 xl:block">Suggested Accounts</p>
+    </div>
+  );
 };
 
 export default SugesstedAccount;
