@@ -16,7 +16,11 @@ interface IProps {
 }
 
 const Profile = ({ data }: IProps) => {
+  const [showUserVideos, setShowUserVideos] = useState(true);
   const { user, userVideos, userLikedVideos } = data;
+
+  const videos = showUserVideos ? "border-b-2 border-black" : "text-gray-400";
+
   return (
     <div>
       <div className="w-full">
@@ -40,6 +44,11 @@ const Profile = ({ data }: IProps) => {
               {user.userName}
             </p>
           </div>
+        </div>
+      </div>
+      <div>
+        <div className="flex gap-10 mb-10 mt-10 border-b-2 border-gray-200 bg-whiite w-full">
+          <p className={`text-xl font-semibold cursor-pointer mt-2`}>Videos</p>
         </div>
       </div>
     </div>
