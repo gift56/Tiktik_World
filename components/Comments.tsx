@@ -4,12 +4,13 @@ import Link from "next/link";
 import { GoVerified } from "react-icons/go";
 import useAuthStore from "../store/authStore";
 import NoResult from "./NoResult";
+import { IUser } from "../types";
 
 interface IProps {
   postingComment: boolean;
   comment: string;
-  setComment: Dispatch<SetStateAction<string>>
-  addComment: (e:React.FormEvent) => void;
+  setComment: Dispatch<SetStateAction<string>>;
+  addComment: (e: React.FormEvent) => void;
   comments: IComment[];
 }
 
@@ -27,13 +28,24 @@ const Comments = ({
   addComment,
   comments,
 }: IProps) => {
-  const { userProfile } = useAuthStore();
+  const { userProfile, allUsers } = useAuthStore();
 
   return (
     <div className="border-t-2 border-gray-200 pt-4 px-10 bg-[#f8f8f8] border-b-2 lg:pb-0 pb-[100px]">
       <div className="overflow-scroll lg:h-[475px]">
         {comments?.length ? (
-          <div>Video</div>
+          comments.map((item, index) => (
+            <>
+              {allUsers.map(
+                (user: IUser) =>
+                  user._id === (item.postedBy._id || item.postedBy._ref) &&(
+                    <div className="p-2 items-center" key={index}>
+
+                    </div>
+                  )
+              )}
+            </>
+          ))
         ) : (
           <NoResult text="No Comments yet!" />
         )}
