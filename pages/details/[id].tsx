@@ -63,6 +63,8 @@ const Detail = ({ postDetails }: IProps) => {
         comment,
       });
       setPost({ ...post, comments: data.comments });
+      setComment("");
+      setPostingComment(false);
     }
   };
 

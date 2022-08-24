@@ -44,7 +44,7 @@ const Comments = ({
             <input
               type="text"
               value={comment}
-              onChange={(e) => setComment(e.target.value.trim())}
+              onChange={(e) => setComment(e.target.value)}
               placeholder="Add comment..."
               className="bg-primary px-6 py-4 text-md font-medium border-2 w-[250px] md:w-[500px] lg:w-[350px] border-gray-100 focus:outline-none focus:border-2 focus:border-gray-300 flex-1 rounded-lg"
             />
