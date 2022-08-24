@@ -56,7 +56,7 @@ const Detail = ({ postDetails }: IProps) => {
 
   return (
     <div className="flex w-full absolute left-0 top-0 bg-white flex-wrap lg:flex-nowrap">
-      <div className="relative flex-2 w-[1000px] lg:w-9/12 flex justify-center items-center bg-blurred-img bg-no-repeat bg-cover bg-center">
+      <div className="relative flex-2 w-full lg:w-9/12 flex justify-center items-center bg-blurred-img bg-no-repeat bg-cover bg-center">
         <div className="absolute top-6 left-2 lg:left-6 flex gap-6 z-50">
           <p className="cursor-pointer" onClick={() => router.back()}>
             <MdOutlineCancel className="text-white text-[35px]" />
@@ -93,7 +93,7 @@ const Detail = ({ postDetails }: IProps) => {
         </div>
       </div>
       <div>
-        <div className="relative w-[1000px] md:w-[900px] lg:w-[700px]">
+        <div className="relative w-[100vw] lg:w-[700px]">
           <div className="mt-10 lg:mt-20">
             <div className="flex gap-3 p-2 cursor-pointer font-semibold rounded">
               <div className="ml-4 md:20 md:h-20 w-16 h-16">
