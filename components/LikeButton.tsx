@@ -23,7 +23,7 @@ const LikeButton = ({ handleLike, handleDislike, likes }: IProps) => {
   }, [filterLikes, likes]);
 
   return (
-    <div className="gap-6">
+    <div className="flex gap-6">
       <div className="flex flex-col justify-center items-center mt-4 cursor-pointer">
         {liked ? (
           <div
