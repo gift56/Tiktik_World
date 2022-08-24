@@ -8,8 +8,8 @@ import NoResult from "./NoResult";
 interface IProps {
   postingComment: boolean;
   comment: string;
-  setComment: () => void;
-  addComment: () => void;
+  setComment: Dispatch<SetStateAction<string>>
+  addComment: (e:React.FormEvent) => void;
   comments: IComment[];
 }
 
