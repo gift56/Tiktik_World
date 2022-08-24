@@ -31,6 +31,9 @@ const SugesstedAccount = () => {
                   layout="responsive"
                 />
               </div>
+              <div className="hidden xl:block">
+                
+              </div>
             </div>
           </Link>
         ))}
