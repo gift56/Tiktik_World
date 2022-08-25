@@ -9,6 +9,7 @@ import { IoMdAdd } from "react-icons/io";
 import Logo from "../utils/tiktik-logo.png";
 import { createOrGetGoogleUser } from "../utils";
 import useAuthStore from "../store/authStore";
+import { HiMoon } from "react-icons/hi";
 
 const Navbar = () => {
   const { userProfile, removeUser, addUser } = useAuthStore();
@@ -21,6 +22,14 @@ const Navbar = () => {
     if (searchValue) {
       router.push(`/search/${searchValue}`);
     }
+  };
+
+  const renderThemeChangerIcon = () => {
+    return (
+      <button type="button" className="bg-gray-200 p-2 rounded-md hover:ring-2 hover:ring-gray-300">
+        <HiMoon />
+      </button>
+    );
   };
 
   return (
@@ -57,7 +66,7 @@ const Navbar = () => {
       </div>
       <div>
         {userProfile ? (
-          <div className="flex gap-5 md:gap-10">
+          <div className="flex gap-5 md:gap-10 items-center">
             <Link href="/upload">
               <button className="border-2 px-2 md:px-4 text-md font-semibold flex items-center gap-2 rounded">
                 <IoMdAdd className="text-xl" />
@@ -88,6 +97,7 @@ const Navbar = () => {
             >
               <AiOutlineLogout color="red" fontSize={21} />
             </button>
+            {renderThemeChangerIcon()}
           </div>
         ) : (
           <GoogleLogin
