@@ -32,7 +32,13 @@ const Search = ({ videos }: { videos: Video[] }) => {
           Videos
         </p>
       </div>
-      {isAccount ? <div>Account</div> : <div> Videos</div>}
+      {isAccount ? (
+        <div>Account</div>
+      ) : (
+        <div className="md:mt-16 flex flex-wrap gap-6 md:justify-start">
+          Videos
+        </div>
+      )}
     </div>
   );
 };
