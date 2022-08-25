@@ -39,7 +39,9 @@ const Search = ({ videos }: { videos: Video[] }) => {
       ) : (
         <div className="md:mt-16 flex flex-wrap gap-6 md:justify-start">
           {videos.length ? (
-            videos.map((video: Video) => <div></div>)
+            videos.map((video: Video, index) => (
+              <VideoCard post={video} key={index} />
+            ))
           ) : (
             <NoResult text={`No video results for ${searchTerm}`} />
           )}
