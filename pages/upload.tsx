@@ -69,14 +69,14 @@ const Upload = () => {
   };
 
   return (
-    <div className="flex w-full h-full absolute top-[60px] left-0 mb-10 pt-10 lg:pt-20 justify-center bg-[#f8f8f8]">
-      <div className="bg-white rounded-lg flex gap-6 flex-wrap justify-between items-center p-14 pt-6 xl:h-[80vh] w-[60%] ">
+    <div className="flex w-full h-full absolute top-[68px] left-0 mb-10 pt-10 lg:pt-20 justify-center bg-[#f8f8f8] dark:bg-black">
+      <div className="bg-white dark:bg-gray-800 rounded-lg flex gap-6 flex-wrap justify-between items-center p-14 pt-6 xl:h-[80vh] w-[60%] ">
         <div>
           <div>
             <p className="text-2xl font-bold">Upload a Video</p>
             <p className="text-md text-gray-400">Post videos to your account</p>
           </div>
-          <div className="border-dashed rounded-xl border-4 border-gray-200 flex flex-col justify-center items-center outline-none mt-10 w-[260px] h-[460px] p-10 cursor-pointer hover:border-red-300 hover:bg-gray-100 transition-all">
+          <div className="border-dashed rounded-xl border-4 border-gray-200 flex flex-col justify-center items-center outline-none mt-10 w-[260px] h-[460px] p-10 cursor-pointer hover:border-red-300 hover:bg-gray-100 dark:hover:bg-gray-600 transition-all">
             {isLoading ? (
               <p>Uploading......</p>
             ) : (
@@ -130,17 +130,17 @@ const Upload = () => {
             type="text"
             value={caption}
             onChange={(e) => setCaption(e.target.value)}
-            className="p-2 rounded outline-none text-md border-2 border-gray-200"
+            className="p-2 rounded outline-none text-md border-2 border-gray-200 dark:bg-gray-600 dark:border-gray-500"
           />
           <label className="text-md font-medium">Choose a Catergory</label>
           <select
-            className="p-2 rounded outline-none text-md capitalize border-2 border-gray-200 lg:p-4 cursor-pointer"
+            className="p-2 rounded outline-none text-md capitalize border-2 border-gray-200 dark:bg-gray-600 dark:border-gray-500 lg:p-4 cursor-pointer"
             onChange={(e) => setCartegory(e.target.value)}
           >
             {topics.map((topic) => (
               <option
                 key={topic.name}
-                className="capitalize outline-none bg-white text-gray-700 text-md p-2 hover:bg-slate-300"
+                className="capitalize outline-none bg-white dark:bg-gray-600 dark:text-gray-100 text-gray-700 text-md p-2 hover:bg-slate-300"
                 value={topic.name}
               >
                 {topic.name}
