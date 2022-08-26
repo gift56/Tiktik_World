@@ -149,7 +149,7 @@ const Upload = () => {
           </select>
           <div className="flex gap-6 mt-10">
             <button
-              onClick={() => {}}
+              onClick={() => router.push("/")}
               type="button"
               className="text-md border-2 font-medium p-2 rounded  w-28 lg:w-44 outline-none border-gray-300"
             >
