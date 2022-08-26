@@ -26,7 +26,7 @@ const Search = ({ videos }: { videos: Video[] }) => {
 
   return (
     <div className="w-full">
-      <div className="flex gap-10 mb-10 mt-10 border-b-2 border-gray-200 bg-whiite w-full">
+      <div className="flex gap-10 mb-10 mt-10 border-b-2 border-gray-200 bg-white dark:bg-[#1d2225] w-full">
         <p
           className={`text-xl font-semibold cursor-pointer mt-2 ${Accounts}`}
           onClick={() => setIsAccount(true)}
@@ -56,11 +56,11 @@ const Search = ({ videos }: { videos: Video[] }) => {
                     />
                   </div>
                   <div className="hidden xl:block">
-                    <p className="flex gap-1 items-center text-md font-bold text-primary lowercase">
+                    <p className="flex gap-1 items-center text-md font-bold text-primary dark:text-gray-100 lowercase">
                       {user.userName.replace(" ", "")}{" "}
                       <GoVerified className="text-blue-400" />
                     </p>
-                    <p className="flex gap-1 items-center text-xs font-bold text-gray-400 capitalize">
+                    <p className="flex gap-1 items-center text-xs font-bold text-gray-400 dark:text-gray-300 capitalize">
                       {user.userName}
                     </p>
                   </div>

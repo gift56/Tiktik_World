@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import { AiOutlineLogout } from "react-icons/ai";
 import { BiSearch } from "react-icons/bi";
 import { IoMdAdd } from "react-icons/io";
-import Logo from "../utils/tiktik-logo.png";
+import Logo from "../utils/logo.png";
 import { createOrGetGoogleUser } from "../utils";
 import useAuthStore from "../store/authStore";
 import { HiMoon, HiOutlineSun } from "react-icons/hi";
@@ -61,19 +61,19 @@ const Navbar = () => {
   return (
     <div className="w-full flex justify-between items-center border-b-2 border-gray-200 py-2 px-4">
       <Link href="/">
-        <div className="w-[100px] md:w-[130px]">
+        <div className="w-[100px] md:w-[130px] flex items-center md:gap-1">
           <Image
             className="cursor-pointer"
             src={Logo}
             alt="tiktik"
-            layout="responsive"
           />
+          <span className="text-pink-500 font-bold text-xl tracking-wider md:text-2xl cursor-pointer">TIKTIK</span>
         </div>
       </Link>
       <div className="relative hidden lg:block">
         <form
           onSubmit={handleSearch}
-          className="absolute md:static top-10 left-20 bg-white dark:bg-black"
+          className="absolute md:static top-10 left-20 bg-white dark:bg-[#1d2225]"
         >
           <input
             type="text"
