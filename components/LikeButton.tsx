@@ -27,17 +27,17 @@ const LikeButton = ({ handleLike, handleDislike, likes }: IProps) => {
       <div className="flex flex-col justify-center items-center mt-4 cursor-pointer">
         {liked ? (
           <div
-            className="bg-primary rounded-full p-2 md:p-4 text-[#f51997]"
+            className="bg-primary dark:bg-gray-800 rounded-full p-2 md:p-4 text-[#f51997]"
             onClick={handleDislike}
           >
             <MdFavorite className="text-lg md:text-3xl" />
           </div>
         ) : (
           <div
-            className="bg-primary rounded-full p-2 md:p-4"
+            className="bg-primary dark:bg-gray-800 rounded-full p-2 md:p-4"
             onClick={handleLike}
           >
-            <MdFavorite className="" />
+            <MdFavorite className="text-lg md:text-3xl" />
           </div>
         )}
         <p
