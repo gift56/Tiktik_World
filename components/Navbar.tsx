@@ -92,7 +92,7 @@ const Navbar = () => {
       </div>
       <div>
         {userProfile ? (
-          <div className="flex gap-5 md:gap-10 items-center">
+          <div className="flex gap-2 md:gap-10 items-center">
             <Link href="/upload">
               <button className="border-2 px-2 md:px-4 py-1 text-md font-semibold flex items-center gap-2 rounded">
                 <IoMdAdd className="text-xl" />
@@ -106,7 +106,7 @@ const Navbar = () => {
                   <Image
                     width={40}
                     height={40}
-                    className="rounded-full cursor-pointer"
+                    className="rounded-full cursor-pointer hidden md:block"
                     src={userProfile.image}
                     alt="profile photo"
                   />
@@ -115,7 +115,7 @@ const Navbar = () => {
             )}
             <button
               type="button"
-              className="px-2"
+              className="md:px-2"
               onClick={() => {
                 googleLogout();
                 removeUser();
