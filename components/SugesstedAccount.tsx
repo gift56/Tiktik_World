@@ -20,7 +20,7 @@ const SugesstedAccount = () => {
       <div>
         {allUsers.slice(0, 6).map((user: IUser) => (
           <Link href={`/profile/${user._id}`} key={user._id}>
-            <div className="flex gap-3 cursor-pointer hover:bg-primary p-2 font-semibold rounded">
+            <div className="flex items-center gap-3 cursor-pointer hover:bg-primary dark:hover:bg-gray-800 p-2 font-semibold rounded transition-all">
               <div className="w-8 h-8">
                 <Image
                   src={user.image}
@@ -32,10 +32,10 @@ const SugesstedAccount = () => {
                 />
               </div>
               <div className="hidden xl:block">
-                <p className="flex gap-1 items-center text-md font-bold text-primary lowercase">
+                <p className="flex gap-1 items-center text-md font-bold text-primary dark:text-gray-100 lowercase">
                   {user.userName.replace(' ','')} <GoVerified className="text-blue-400" />
                 </p>
-                <p className="flex gap-1 items-center text-xs font-bold text-gray-400 capitalize">
+                <p className="flex gap-1 items-center text-xs font-bold text-gray-400 dark:text-gray-300 capitalize">
                   {user.userName}
                 </p>
               </div>
