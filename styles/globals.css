@@ -2,7 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
+@layer base {
+  body {
+    @apply dark:bg-black dark:text-gray-100 bg-white text-black
+  }
+}
 
 html,
 body {

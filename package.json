@@ -15,6 +15,7 @@
     "gapi-script": "^1.2.0",
     "jwt-decode": "^3.1.2",
     "next": "12.1.6",
+    "next-themes": "^0.2.0",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-google-login": "^5.2.2",

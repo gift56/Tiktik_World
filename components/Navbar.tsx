@@ -9,12 +9,15 @@ import { IoMdAdd } from "react-icons/io";
 import Logo from "../utils/tiktik-logo.png";
 import { createOrGetGoogleUser } from "../utils";
 import useAuthStore from "../store/authStore";
-import { HiMoon } from "react-icons/hi";
+import { HiMoon, HiOutlineSun } from "react-icons/hi";
+import { useTheme } from "next-themes";
 
 const Navbar = () => {
   const { userProfile, removeUser, addUser } = useAuthStore();
   const [searchValue, setSearchValue] = useState("");
   const router = useRouter();
+  const { systemTheme, theme, setTheme } = useTheme();
+  const [mount, setMount] = useState(false);
 
   const handleSearch = (e: { preventDefault: () => void }) => {
     e.preventDefault();
@@ -24,12 +27,35 @@ const Navbar = () => {
     }
   };
 
+  useEffect(() => {
+    setMount(true);
+  }, []);
+
   const renderThemeChangerIcon = () => {
-    return (
-      <button type="button" className="bg-gray-200 p-2 rounded-md hover:ring-2 hover:ring-gray-300">
-        <HiMoon />
-      </button>
-    );
+    const currentTheme = theme === "system" ? systemTheme : theme;
+    if (!mount) return null;
+
+    if (currentTheme === "dark") {
+      return (
+        <button
+          type="button"
+          className="bg-gray-200 dark:bg-gray-600 p-2 rounded-md hover:ring-2 hover:ring-gray-300 dark:hover:ring-gray-600"
+          onClick={() => setTheme("light")}
+        >
+          <HiOutlineSun fontSize={17} />
+        </button>
+      );
+    } else {
+      return (
+        <button
+          type="button"
+          className="bg-gray-200 p-2 rounded-md hover:ring-2 hover:ring-gray-300"
+          onClick={() => setTheme("dark")}
+        >
+          <HiMoon fontSize={16} />
+        </button>
+      );
+    }
   };
 
   return (
@@ -47,13 +73,13 @@ const Navbar = () => {
       <div className="relative hidden md:block">
         <form
           onSubmit={handleSearch}
-          className="absolute md:static top-10 left-20 bg-white"
+          className="absolute md:static top-10 left-20 bg-white dark:bg-black"
         >
           <input
             type="text"
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
-            className="bg-primary p-3 md:text-md font-medium border-2 border-gray-100 focus:outline-none focus:border-2 focus:border-gray-300 w-[300px] md:w-[350px] rounded-full md:top-0"
+            className="bg-primary dark:bg-gray-900 dark:border-gray-800 p-3 md:text-md font-medium border-2 border-gray-100 focus:outline-none focus:border-2 focus:border-gray-300 w-[300px] md:w-[350px] rounded-full md:top-0"
             placeholder="Search Videos and accounts"
           />
           <button
@@ -68,7 +94,7 @@ const Navbar = () => {
         {userProfile ? (
           <div className="flex gap-5 md:gap-10 items-center">
             <Link href="/upload">
-              <button className="border-2 px-2 md:px-4 text-md font-semibold flex items-center gap-2 rounded">
+              <button className="border-2 px-2 md:px-4 py-1 text-md font-semibold flex items-center gap-2 rounded">
                 <IoMdAdd className="text-xl" />
                 {` `}
                 <span className="hidden md:block">Upload</span>
@@ -95,7 +121,7 @@ const Navbar = () => {
                 removeUser();
               }}
             >
-              <AiOutlineLogout color="red" fontSize={21} />
+              <AiOutlineLogout color="red" fontSize={25} />
             </button>
             {renderThemeChangerIcon()}
           </div>
