@@ -32,7 +32,7 @@ const Comments = ({
 
   return (
     <div className="border-t-2 border-gray-200 pt-4 px-10 bg-[#f8f8f8] dark:bg-black border-b-2 lg:pb-0 pb-[100px]">
-      <div className="overflow-scroll lg:h-[475px]">
+      <div className="overflow-scroll lg:h-[290px]">
         {comments?.length ? (
           comments.map((item, index) => (
             <>
@@ -76,7 +76,7 @@ const Comments = ({
         )}
       </div>
       {userProfile && (
-        <div className="absolute bottom-0 left-0 pb-6 px-2 md:px-10">
+        <div className="absolute bottom-[-97px] left-0 pb-6 px-2 md:px-10">
           <form onSubmit={addComment} className="flex gap-4">
             <input
               type="text"
@@ -85,7 +85,7 @@ const Comments = ({
               placeholder="Add comment..."
               className="bg-primary dark:bg-gray-800 dark:border-gray-800 px-6 py-4 text-md font-medium border-2 w-[250px] md:w-[500px] lg:w-[350px] border-gray-100 focus:outline-none focus:border-2 focus:border-gray-300 flex-1 rounded-lg"
             />
-            <button className="text-md text-gray-400 dark:text-gray-100" onClick={addComment}>
+            <button className="text-md text-gray-400 bg-[#f51997] text-center rounded text-md font-medium  py-4 px-3 w-25 outline-none dark:text-gray-100" onClick={addComment}>
               {postingComment ? "Commenting..." : "Comment"}
             </button>
           </form>
