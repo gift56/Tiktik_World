@@ -20,9 +20,9 @@ const Profile = ({ data }: IProps) => {
   const [videosList, setVideosList] = useState<Video[]>([]);
   const { user, userVideos, userLikedVideos } = data;
 
-  const videos = showUserVideos ? "border-b-2 border-black dark:border-gray-100" : "text-gray-400";
+  const videos = showUserVideos ? "border-b-2 border-black dark:border-white" : "text-gray-400";
 
-  const liked = !showUserVideos ? "border-b-2 border-black dark:border-gray-100" : "text-gray-400";
+  const liked = !showUserVideos ? "border-b-2 border-black dark:border-white" : "text-gray-400";
 
   useEffect(() => {
     if (showUserVideos) {
@@ -35,7 +35,7 @@ const Profile = ({ data }: IProps) => {
   return (
     <div>
       <div className="w-full">
-        <div className="flex gap-6 md:gap-10 mb-4 bg-white dark:bg-black w-full items-center">
+        <div className="flex gap-6 md:gap-10 mb-4 bg-white dark:bg-[#1d2225] w-full items-center">
           <div className="w-16 h-16 md:w-32 md:h-32">
             <Image
               src={user.image}
@@ -58,7 +58,7 @@ const Profile = ({ data }: IProps) => {
         </div>
       </div>
       <div>
-        <div className="flex gap-10 mb-10 mt-10 border-b-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-black w-full">
+        <div className="flex gap-10 mb-10 mt-10 border-b-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-[#1d2225] w-full">
           <p
             className={`text-xl font-semibold cursor-pointer pb-2 mt-2 ${videos}`}
             onClick={() => setShowUserVideos(true)}

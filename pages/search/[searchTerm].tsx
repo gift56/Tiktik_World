@@ -16,9 +16,9 @@ const Search = ({ videos }: { videos: Video[] }) => {
   const { searchTerm }: any = router.query;
   const { allUsers } = useAuthStore();
 
-  const Accounts = isAccount ? "border-b-2 border-black" : "text-gray-400";
+  const Accounts = isAccount ? "border-b-2 border-black dark:border-white" : "text-gray-400";
 
-  const isVideos = !isAccount ? "border-b-2 border-black" : "text-gray-400";
+  const isVideos = !isAccount ? "border-b-2 border-black dark:border-white" : "text-gray-400";
 
   const searchedAccounts = allUsers.filter((user: IUser) =>
     user.userName.toLowerCase().includes(searchTerm.toLowerCase())
@@ -28,13 +28,13 @@ const Search = ({ videos }: { videos: Video[] }) => {
     <div className="w-full">
       <div className="flex gap-10 mb-10 mt-10 border-b-2 border-gray-200 bg-white dark:bg-[#1d2225] w-full">
         <p
-          className={`text-xl font-semibold cursor-pointer mt-2 ${Accounts}`}
+          className={`text-xl font-semibold cursor-pointer pb-2 mt-2 ${Accounts}`}
           onClick={() => setIsAccount(true)}
         >
           Accounts
         </p>
         <p
-          className={`text-xl font-semibold cursor-pointer mt-2 ${isVideos}`}
+          className={`text-xl font-semibold cursor-pointer pb-2 mt-2 ${isVideos}`}
           onClick={() => setIsAccount(false)}
         >
           Videos
