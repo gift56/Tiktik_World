@@ -26,8 +26,8 @@ const Upload = () => {
     const fileTypes = ["video/mp4", "video/webm", "video/ogg"];
 
     if (fileTypes.includes(selectedFile.type)) {
-      // setWrongFileType(false);
-      // setIsloading(true);
+      setWrongFileType(false);
+      setIsloading(true);
       client.assets
         .upload("file", selectedFile, {
           contentType: selectedFile.type,
@@ -69,8 +69,8 @@ const Upload = () => {
   };
 
   return (
-    <div className="flex w-full h-full absolute top-[68px] left-0 mb-10 pt-10 lg:pt-20 justify-center bg-[#f8f8f8] dark:bg-black">
-      <div className="bg-white dark:bg-gray-800 rounded-lg flex gap-6 flex-wrap justify-between items-center p-14 pt-6 xl:h-[80vh] w-[60%] ">
+    <div className="flex w-full absolute top-[55px] md:top-[68px] left-0 mb-10 pt-10 lg:pt-20 justify-center bg-[#f8f8f8] dark:bg-black h-max">
+      <div className="bg-white dark:bg-gray-800 rounded-lg flex gap-6 flex-wrap justify-between items-center p-4 md:p-14 pt-6 xl:h-[80vh] w-[90%] lg:w-[60%]">
         <div>
           <div>
             <p className="text-2xl font-bold">Upload a Video</p>
@@ -87,7 +87,7 @@ const Upload = () => {
                       src={videoAsset?.url}
                       loop
                       controls
-                      className="rounded-xl h-[450px] mt-16 bg-black"
+                      className="rounded-xl h-[450px] bg-black"
                     ></video>
                   </div>
                 ) : (

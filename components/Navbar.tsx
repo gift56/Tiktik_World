@@ -70,7 +70,7 @@ const Navbar = () => {
           />
         </div>
       </Link>
-      <div className="relative hidden md:block">
+      <div className="relative hidden lg:block">
         <form
           onSubmit={handleSearch}
           className="absolute md:static top-10 left-20 bg-white dark:bg-black"
