@@ -71,7 +71,7 @@ const Detail = ({ postDetails }: IProps) => {
   if (!post) return null;
 
   return (
-    <div className="flex w-full absolute left-0 top-0 bg-white flex-wrap lg:flex-nowrap">
+    <div className="flex w-full absolute left-0 top-0 bg-white dark:bg-black flex-wrap lg:flex-nowrap">
       <div className="relative flex-2 w-full lg:w-9/12 flex justify-center items-center bg-blurred-img bg-no-repeat bg-cover bg-center">
         <div className="absolute top-6 left-2 lg:left-6 flex gap-6 z-50">
           <p className="cursor-pointer" onClick={() => router.back()}>
@@ -128,19 +128,19 @@ const Detail = ({ postDetails }: IProps) => {
               </div>
               <div>
                 <Link href="/">
-                  <div className="flex flex-col gap-2 mt-1">
-                    <p className="flex items-center gap-2  md:text-md font-bold text-primary">
+                  <div className="flex flex-col gap-1 mt-1">
+                    <p className="flex items-center gap-2  md:text-md font-bold text-primary dark:text-gray-100">
                       {post.postedBy.userName} {` `}{" "}
                       <GoVerified className="text-blue-400 text-md" />
                     </p>
-                    <p className="capitalize font-medium text-xs text-gray-500 hidden md:block">
+                    <p className="capitalize font-medium text-sm text-gray-500 dark:text-gray-300 hidden md:block">
                       {post.postedBy.userName}
                     </p>
                   </div>
                 </Link>
               </div>
             </div>
-            <p className="px-10 text-lg text-gray-600">{post.caption}</p>
+            <p className="px-10 text-lg text-gray-600 font-medium dark:text-gray-100">{post.caption}</p>
             <div className="mt-10 px-10">
               {userProfile && (
                 <LikeButton
