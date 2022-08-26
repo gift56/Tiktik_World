@@ -6,7 +6,7 @@ const List = ({ items, mt }: { items: string[]; mt: boolean }) => (
     {items.map((item) => (
       <p
         key={item}
-        className="text-gray-400 text-sm hover:underline cursor-pointer"
+        className="text-gray-400 text-sm hover:underline cursor-pointer dark:text-gray-100"
       >
         {item}
       </p>
@@ -20,7 +20,7 @@ const Footer = () => {
       <List items={footerList1} mt={false} />
       <List items={footerList2} mt />
       <List items={footerList3} mt />
-      <p className="text-gray-400 text-sm mt-5">2022 AEG TikTik</p>
+      <p className="text-gray-400 text-sm mt-5 dark:text-gray-100">2022 AEG TikTik</p>
     </div>
   );
 };
