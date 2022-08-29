@@ -64,7 +64,7 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
                 </p>
               </div>
             </Link>
-            <p className="text-gray-400 font-bold dark:text-gray-100 md:text-md">{post.caption}</p>
+            <p className="text-gray-400 font-bold dark:text-gray-100 md:text-md mt-1 md:mt-3">{post.caption}</p>
           </div>
         </div>
       </div>
