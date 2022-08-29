@@ -40,7 +40,7 @@ const Comments = ({
                 (user: IUser) =>
                   user._id === (item.postedBy._id || item.postedBy._ref) && (
                     <div className="p-2 items-center" key={index}>
-                      <Link href={`/profile/${user._id}`} key={user._id}>
+                      <Link href={`/profile/${user._id}`}>
                         <div className="flex gap-3 items-start">
                           <div className="w-8 h-8">
                             <Image
