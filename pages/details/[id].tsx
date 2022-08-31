@@ -54,7 +54,7 @@ const Detail = ({ postDetails }: IProps) => {
     }
   };
 
-  const addComment = async (e) => {
+  const addComment = async (e: any) => {
     e.preventDefault();
     if (userProfile && comment) {
       setPostingComment(true);
@@ -140,7 +140,9 @@ const Detail = ({ postDetails }: IProps) => {
                 </Link>
               </div>
             </div>
-            <p className="px-10 text-lg text-gray-600 font-medium dark:text-gray-100">{post.caption}</p>
+            <p className="px-10 text-lg text-gray-600 font-medium dark:text-gray-100">
+              {post.caption}
+            </p>
             <div className="mt-10 px-10">
               {userProfile && (
                 <LikeButton
